@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>GeoAR Test</title>
+    <script src="https://aframe.io/releases/1.4.0/aframe.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/ar.js@3.4.2/aframe/build/aframe-ar-nft.js"></script>
+  </head>
+
+  <body style="margin: 0; overflow: hidden;">
+    <a-scene 
+      embedded 
+      arjs="sourceType: webcam; trackingMethod: best; debugUIEnabled: false;"
+      renderer="logarithmicDepthBuffer: true;"
+    >
+
+      <!-- GPS-basierte 3D Platzierung -->
+      <a-entity 
+        gltf-model="model.glb"
+        scale="1 1 1"
+        gps-entity-place="latitude: 48.429541010213235; longitude: 10.128558553013074;"
+      >
+      </a-entity>
+
+      <a-camera gps-camera rotation-reader></a-camera>
+    </a-scene>
+  </body>
+</html>
